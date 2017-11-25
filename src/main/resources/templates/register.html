@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Register Here</title>
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<style type="text/css">
+#abc {
+	text-align: center;
+	border: medium;
+}
+
+.customrow {
+	padding-top: 6em !important;
+}
+
+p {
+	text-align: center;
+	color: red;
+	font-size: small;
+}
+
+a:hover {
+	color: blue;
+}
+
+#myUl {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333333;
+}
+
+#myLi {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 16px;
+	text-decoration: none;
+}
+
+li h1 {
+	display: block;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+}
+
+li a:hover {
+	background-color: #111111;
+}
+</style>
+</head>
+<body>
+	<ul id="myUl">
+		<li id="myLi"><a th:href="@{/person/getAll}">View All Records</a></li>
+		<li><h1 th:text="${matchesCount}"></h1></li>
+	</ul>
+	<div class="wrap">
+		<!-- tab style-1 -->
+		<div class="row customrow">
+			<div class="grid_12 columns">
+				<div class="tab style-1">
+					<ul>
+						<li class="active">
+
+							<p th:text="${text}" style="color: navy;"></p> <a
+							th:href="'/person/get/'+${addMessage}"><b
+								th:text="${addMessage}"></b></a>
+							<div class="form">
+								<form action="/person/register" method="post"
+									th:object="${person}">
+									<input type="text" class="active textbox"
+										placeholder="Unique ID" name="id" th:value="${id}" /> <input
+										type="text" class="textbox" placeholder="Full Name"
+										name="name" th:field="*{name}" />
+									<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+										th:value="${person.name}"></p>
+									<input type="text" class="textbox" placeholder="Email Address"
+										name="email" th:field="*{email}" th:value="${person.email}" />
+									<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+									<input type="text" class="textbox" placeholder="Age" name="age"
+										required="required" th:field="*{age}" th:value="${person.age}" />
+									<p th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></p>
+									<input type="submit" th:value="${SubmitValue}" />
+								</form>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

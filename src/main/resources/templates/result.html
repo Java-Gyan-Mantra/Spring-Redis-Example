@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" th:href="@{/css/button.css}" />
+<link rel="stylesheet" th:href="@{/css/my.css}" />
+<title>Records !!</title>
+<style type="text/css">
+* {
+	margin: 0;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+header {
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+	width: 100%;
+}
+
+#darkBack {
+	width: 100%;
+	height: 100vh;
+	background: rgba(76, 56, 75, .15);
+}
+
+#popUp {
+	position: fixed;
+	max-width: 424px;
+	width: 27%;
+	height: 300px;
+	background: rgba(236, 240, 241, 1);
+	border: 7px solid #fff;
+	bottom: 340px;
+	float: center;
+	margin-left: 464px;
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+	float: center;
+	margin-left: 470px;
+}
+
+#new span {
+	background: #fff;
+	position: absolute;
+	color: #1c8dc4;
+	padding: 4px 10px;
+	font-size: 16px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	margin-top: -5px;
+}
+
+#popUp .close {
+	color: #464646;
+	right: 8px;
+	top: 0px;
+	position: absolute;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+#popUp h2 {
+	font-size: 15px;
+	font-family: sans-serif;
+	color: red;
+	line-height: 24px;
+	font-weight: 100;
+	text-align: center;
+	margin-top: 40px;
+	padding: 0 20px;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	background: url(../images/bg.jpg) no-repeat #fff;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	font-weight: 300;
+}
+
+#body {
+	height: 1200px;
+	background: #eee;
+}
+
+a.button {
+	margin: 0 auto;
+	text-align: center;
+	right: 0;
+	left: 0;
+	position: absolute;
+	width: 120px;
+	font-size: 15px;
+	color: #fff;
+	border-bottom: 2px solid #18729f;
+	background: #1c8dc4;
+	border-radius: 4px;
+	padding: 8px 0;
+}
+
+#plus {
+	position: fixed;
+	color: #fff;
+	bottom: 15%;
+	font-size: 15px;
+	margin-left: -425px;
+	-webkit-transition: all 1.25s ease;
+	-moz-transition: all 1.25s ease;
+	-o-transition: all 1.25s ease;
+	transition: all 1.25s ease;
+	cursor: pointer;
+	text-align: left;
+	letter-spacing: 1px;
+}
+
+#plus span {
+	position: absolute;
+	margin-top: 38px;
+	left: 4px;
+}
+
+#plus::after {
+	content: '';
+	display: block;
+	display: relative;
+	border-top: 55px solid transparent;
+	border-bottom: 55px solid transparent;
+	border-left: 55px solid #1c8dc4;
+}
+
+@media all and (max-width: 900px) {
+	#popUp {
+		margin-left: -425px;
+	}
+	#plus {
+		margin-left: 0px;
+	}
+}
+/* 
+body {
+	background-color: steelblue;
+} */
+#wrapper {
+	width: 74%;
+	margin: auto;
+}
+
+#left {
+	width: 50%;
+	float: left;
+}
+
+#right {
+	width: 50%;
+	float: right
+}
+
+td {
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<div align="center" th:each="list : *{dummylist}">
+		<header>
+			<div id="darkBack"></div>
+			<div id="popUp">
+				<div id="close" class="close">
+					<i class="fa fa-times"></i>
+				</div>
+				<br />
+				<table align="center"
+					style="text-align: center; color: navy; padding: 5px; border-spacing: 5px; width: auto;">
+					<tr>
+						<td>UUID</td>
+						<td th:text="${person.id}"></td>
+					</tr>
+					<tr>
+						<td>Name</td>
+						<td th:text="${person.name}"></td>
+					</tr>
+					<tr>
+						<td>Age</td>
+						<td th:text="${person.age}"></td>
+					</tr>
+					<tr>
+						<td>Email</td>
+						<td th:text="${person.email}"></td>
+					</tr>
+				</table>
+				<br />
+				<div id="wrapper">
+					<div id="left">
+						<a th:href="@{/person/delete}+'?id='+${person.id}"
+							style="text-align: left;" class="no">Delete</a>
+					</div>
+					<div id="right">
+						<a th:href="@{/person/updatePage}+'/'+${person.id}"
+							style="text-align: right;" class="yes">Update</a>
+					</div>
+				</div>
+				<br /> <br /> <br /> <a th:href="@{/person/home}" class="button">Continue</a>
+			</div>
+			<div id="plus">
+				<span>NEW<br />&nbsp;&nbsp;<i class="fa fa-plus"></i></span>
+			</div>
+		</header>
+	</div>
+
+
+	<div align="center" th:each="list : *{myList}">
+		<header>
+			<div id="darkBack"></div>
+			<div id="popUp" style="height: 150px;">
+				<div id="close" class="close">
+					<i class="fa fa-times"></i>
+				</div>
+				<h2 th:text="${Message}" style="color: navy;"></h2>
+				<br /> <a th:href="@{/person/home}" class="button">OK</a>
+			</div>
+			<div id="plus">
+				<span>NEW<br />&nbsp;&nbsp;<i class="fa fa-plus"></i></span>
+			</div>
+		</header>
+	</div>
+	<table align="center" th:each="list : *{tablelist}"
+		style="margin: auto;">
+		<caption>Person List</caption>
+		<thead>
+			<tr>
+				<th>Unique ID</th>
+				<th>Name</th>
+				<th>Age</th>
+				<th>Email</th>
+				<th>Delete</th>
+				<th>Update</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="person : *{persons}">
+				<td th:text="${person.id}"></td>
+				<td th:text="${person.name}"></td>
+				<td th:text="${person.age}"></td>
+				<td th:text="${person.email}"></td>
+				<td><a th:href="@{/person/delete}+'?id='+${person.id}"><img
+						th:src="@{/images/delete.png}" height="30px" width="40px" /></a></td>
+				<td><a th:href="@{/person/updatePage}+'/'+${person.id}"><img
+						th:src="@{/images/update.png}" height="30px" width="40px" /></a></td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th colspan="3">Total Records</th>
+				<th th:text="${count}"></th>
+			</tr>
+		</tfoot>
+	</table>
+</body>
+</html>

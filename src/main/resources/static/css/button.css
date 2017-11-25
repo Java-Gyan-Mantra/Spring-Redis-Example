@@ -1,0 +1,71 @@
+.yes {
+	background: green;
+	display: block;
+	padding: 6px 35px;
+	float: center;
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	text-shadow: 0 0 10px #000;
+	border-top: 1px solid rgb(200, 250, 100);
+	font-size: 20px;
+	-webkit-box-shadow: rgba(255, 255, 255, .3) 0 2px 1px, rgba(0, 0, 0, .3)
+		0 -2px 1px, rgba(0, 0, 0, 0.5) 0px 3px 10px, rgba(0, 50, 0, .75) 0 0
+		40px inset;
+	-moz-box-shadow: rgba(255, 255, 255, .3) 0 2px 1px, rgba(0, 0, 0, .3) 0
+		-2px 1px, rgba(0, 0, 0, 0.5) 0px 3px 10px, rgba(0, 50, 0, .75) 0 0
+		40px inset;
+	box-shadow: rgba(255, 255, 255, .3) 0 2px 1px, rgba(0, 0, 0, .3) 0 -2px
+		1px, rgba(0, 0, 0, 0.5) 0px 3px 10px, rgba(0, 50, 0, .75) 0 0 40px
+		inset;
+	border-radius: 56px;
+	background: #bfd255;
+	background: -webkit-linear-gradient(top, #bfd255 0%, #8eb92a 50%, #72aa00 51%,
+		#9ecb2d 100%);
+	background: -moz-linear-gradient(top, #bfd255 0%, #8eb92a 50%, #72aa00 51%, #9ecb2d
+		100%);
+	background: -ms-linear-gradient(top, #bfd255 0%, #8eb92a 50%, #72aa00 51%, #9ecb2d
+		100%);
+	background: -o-linear-gradient(top, #bfd255 0%, #8eb92a 50%, #72aa00 51%, #9ecb2d
+		100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfd255',
+		endColorstr='#9ecb2d', GradientType=0);
+	background: linear-gradient(to bottom, #bfd255 0%, #8eb92a 50%, #72aa00 51%, #9ecb2d
+		100%);
+}
+
+.no {
+	background: red;
+	display: block;
+	padding: 6px 35px;
+	float: center;
+	color: white;
+	text-decoration: none;
+	font-size: 20px;
+	border-top: 1px solid rgb(250, 150, 100);
+	font-weight: bold;
+	-webkit-box-shadow: rgba(255, 255, 255, .3) 0 2px 1px, rgba(0, 0, 0, .3)
+		0 -2px 1px, rgba(0, 0, 0, 0.5) 0px 3px 10px, rgba(100, 0, 0, .75) 0 0
+		40px inset;
+	-moz-box-shadow: rgba(255, 255, 255, .3) 0 2px 1px, rgba(0, 0, 0, .3) 0
+		-2px 1px, rgba(0, 0, 0, 0.5) 0px 3px 10px, rgba(100, 0, 0, .75) 0 0
+		40px inset;
+	box-shadow: rgba(255, 255, 255, .3) 0 2px 1px, rgba(0, 0, 0, .3) 0 -2px
+		1px, rgba(0, 0, 0, 0.5) 0px 3px 10px, rgba(100, 0, 0, .75) 0 0 40px
+		inset;
+	text-shadow: 0 0 10px #000;
+	border-radius: 56px;
+	background: #f3c5bd;
+	background: -webkit-linear-gradient(top, #f3c5bd 0%, #e86c57 50%, #ea2803 51%,
+		#ff6600 100%);
+	background: -moz-linear-gradient(top, #f3c5bd 0%, #e86c57 50%, #ea2803 51%, #ff6600
+		100%);
+	background: -ms-linear-gradient(top, #f3c5bd 0%, #e86c57 50%, #ea2803 51%, #ff6600
+		100%);
+	background: -o-linear-gradient(top, #f3c5bd 0%, #e86c57 50%, #ea2803 51%, #ff6600
+		100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3c5bd',
+		endColorstr='#ff6600', GradientType=0);
+	background: linear-gradient(to bottom, #f3c5bd 0%, #e86c57 50%, #ea2803 51%, #ff6600
+		100%);
+}
